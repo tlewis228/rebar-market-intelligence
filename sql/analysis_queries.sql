@@ -1,13 +1,80 @@
--- ============================================================
 -- Rebar Market Intelligence
 -- Construction Spending & Rebar Price Analysis
--- ============================================================
+--
+-- MySQL was used for data storage, organization,
+-- validation, and basic exploratory querying.
+-- Primary statistical analysis was performed in Python/Jupyter Notebook.
+
 
 -- ============================================================
--- Query #8: Basic Market Statistics
--- Purpose:
--- Provides an overall statistical summary of the construction
--- spending and rebar PPI data.
+-- 1. Confirm the number of records
+-- ============================================================
+
+SELECT COUNT(*) AS total_records
+FROM market_data;
+
+
+-- ============================================================
+-- 2. Check the date range
+-- ============================================================
+
+SELECT
+    MIN(date) AS start_date,
+    MAX(date) AS end_date
+FROM market_data;
+
+
+-- ============================================================
+-- 3. Review the stored data
+-- ============================================================
+
+SELECT *
+FROM market_data
+LIMIT 10;
+
+
+-- ============================================================
+-- 4. Check for missing construction spending values
+-- ============================================================
+
+SELECT COUNT(*) AS missing_construction
+FROM market_data
+WHERE total_construction IS NULL;
+
+
+-- ============================================================
+-- 5. Check for missing rebar PPI values
+-- ============================================================
+
+SELECT COUNT(*) AS missing_rebar_ppi
+FROM market_data
+WHERE rebar_ppi IS NULL;
+
+
+-- ============================================================
+-- 6. Review the range of construction spending
+-- ============================================================
+
+SELECT
+    MIN(total_construction) AS min_construction,
+    MAX(total_construction) AS max_construction,
+    AVG(total_construction) AS avg_construction
+FROM market_data;
+
+
+-- ============================================================
+-- 7. Review the range of rebar PPI
+-- ============================================================
+
+SELECT
+    MIN(rebar_ppi) AS min_rebar_ppi,
+    MAX(rebar_ppi) AS max_rebar_ppi,
+    AVG(rebar_ppi) AS avg_rebar_ppi
+FROM market_data;
+
+
+-- ============================================================
+-- 8. Overall dataset summary
 -- ============================================================
 
 SELECT
@@ -24,10 +91,7 @@ FROM market_data;
 
 
 -- ============================================================
--- Query #9: Annual Market Summary
--- Purpose:
--- Summarizes average, minimum, and maximum construction
--- spending and rebar PPI for each year.
+-- 9. Annual summary for data exploration
 -- ============================================================
 
 SELECT
@@ -42,11 +106,18 @@ ORDER BY year;
 
 
 -- ============================================================
--- Query #11: Top 10 Years by Average Construction Spending
--- Purpose:
--- Identifies the 10 years with the highest average monthly
--- construction spending.
--- Excludes 2026 because the year is incomplete.
+-- 10. Review the most recent observations
+-- ============================================================
+
+SELECT *
+FROM market_data
+ORDER BY date DESC
+LIMIT 10;
+
+
+-- ============================================================
+-- 11. Identify years with the highest average construction spending
+--     for exploratory review
 -- ============================================================
 
 SELECT
