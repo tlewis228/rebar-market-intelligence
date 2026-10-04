@@ -159,3 +159,29 @@ Four of the five significant periods showed construction spending and rebar pric
 Construction spending provides useful context for understanding overall construction market conditions, but the analysis does not support using monthly changes in total construction spending alone as a strong indicator of monthly rebar price movements.
 
 The results suggest that construction activity and rebar prices can move in the same direction during certain significant periods, but their month-to-month relationship is consistently weak. Additional market factors should therefore be considered when evaluating rebar price movements.
+
+
+## Limitations
+
+This analysis is observational and describes historical relationships between construction spending and rebar prices. The results should not be interpreted as evidence that changes in construction spending directly cause changes in rebar prices.
+
+The analysis does not directly account for other factors that can influence rebar prices, including:
+
+- Raw material costs
+- Energy prices
+- Supply conditions
+- Imports and exports
+- Tariffs
+- Interest rates
+- Broader economic conditions
+- Other construction market factors
+
+The analysis also focuses on total U.S. construction spending rather than specific construction sectors, regions, or individual projects.
+
+## Conclusion
+
+Construction spending provides useful context for understanding overall construction market conditions, but the analysis does not support using monthly changes in total construction spending alone as a strong indicator of monthly rebar price movements.
+
+Although construction activity and rebar prices moved in the same direction during several significant historical periods, the overall month-to-month relationships were consistently weak.
+
+For market intelligence purposes, construction spending may be more useful as one component of a broader market-monitoring approach rather than as a standalone predictor of rebar price movements.
