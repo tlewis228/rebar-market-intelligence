@@ -1,119 +1,211 @@
-# Rebar Market Intelligence: Construction Spending & Rebar Price Analysis
+# Findings
 
-## Project Overview
+## Rebar Market Intelligence: Construction Spending & Rebar Price Analysis
 
-This project analyzes the historical relationship between U.S. construction spending and rebar prices to better understand construction market conditions and their potential relationship to the rebar industry.
+This document presents the detailed results of the eight business questions used to evaluate the historical relationship between U.S. construction spending and rebar prices from January 1993 through July 2026.
 
-Using monthly data from the U.S. Census Bureau and the Bureau of Labor Statistics (BLS), the analysis examines changes in total U.S. construction spending alongside changes in the Producer Price Index (PPI) for fabricated structural metal bar joists and concrete reinforcing bars.
+---
 
-The goal is to identify historical trends, relationships, timing patterns, and significant periods of change that can provide useful market intelligence for the rebar industry.
+## BQ1 — How has total U.S. construction spending changed over the period analyzed?
 
-## Business Problem
+Total U.S. construction spending increased substantially over the analysis period.
 
-Rebar demand and pricing are influenced by conditions within the broader construction market. Understanding whether changes in construction activity are associated with changes in rebar prices could provide useful information for evaluating historical market conditions.
+* **January 1993:** $31,283 million
+* **July 2026:** $197,271 million
+* **Absolute increase:** $165,988 million
+* **Percentage increase:** 530.60%
 
-This project investigates whether total U.S. construction spending can serve as a useful historical market indicator when analyzed alongside rebar price movements.
+### Finding
 
-The analysis focuses on identifying relationships and patterns rather than establishing a causal relationship between construction spending and rebar prices.
+Total U.S. construction spending increased approximately **530.60%** over the period analyzed. This indicates significant long-term growth in construction spending.
 
-## Project Objective
+However, the overall increase does not mean construction spending increased every month, nor does it establish a relationship with rebar prices.
 
-The objective of this project is to analyze historical monthly construction spending and rebar price data to determine:
+---
 
-* How construction spending has changed over time
-* How rebar prices have changed over time
-* Whether the two variables have a measurable relationship
-* How strong that relationship is
-* Whether changes in construction spending and rebar prices show a consistent timing pattern
-* Whether their relationship differs during periods of increasing versus decreasing construction activity
-* What significant historical periods reveal about the relationship between the two markets
-* Whether construction activity provides useful historical market intelligence for the rebar industry
+## BQ2 — How have rebar prices changed over the period analyzed?
 
-## Business Questions
+The Rebar Producer Price Index (PPI) also increased substantially over the analysis period.
 
-The analysis is structured around eight business questions. Each question builds toward the overall objective of understanding the relationship between construction activity and rebar prices.
+* **January 1993:** 116.5
+* **July 2026:** 373.472
+* **Absolute increase:** 256.972 index points
+* **Percentage increase:** 220.58%
 
-### BQ1. How has total U.S. construction spending changed over the period analyzed?
+### Finding
 
-This establishes the overall trend in construction activity.
+The Rebar PPI increased approximately **220.58%** from January 1993 through July 2026.
 
-### BQ2. How have rebar prices changed over the period analyzed?
+This demonstrates a significant long-term increase in the producer price index for fabricated structural metal bar joists and concrete reinforcing bars.
 
-This establishes the overall trend in rebar prices.
+However, this long-term increase does not establish that construction spending caused the change in rebar prices.
 
-### BQ3. Is there a measurable relationship between total construction spending and rebar prices?
+---
 
-This determines whether the two variables are historically associated.
+## BQ3 — Is there a measurable relationship between total construction spending and rebar prices?
 
-### BQ4. How strong is the relationship between changes in construction spending and changes in rebar prices?
+The correlation between total U.S. construction spending and rebar PPI was:
 
-This measures the strength of the relationship while focusing on changes rather than only the overall levels.
+**Correlation = 0.902**
 
-### BQ5. Do changes in construction spending tend to occur before, after, or at the same time as changes in rebar prices?
+### Finding
 
-This examines whether there is a consistent timing relationship between construction activity and rebar prices.
+The analysis shows a **very strong positive relationship** between the overall levels of construction spending and rebar PPI.
 
-### BQ6. Does the relationship between construction spending and rebar prices change when construction spending increases versus when it decreases?
+The corresponding R² is approximately **0.814**, meaning approximately 81.4% of the variation in rebar PPI is associated with the linear relationship between the two variables in this dataset.
 
-This examines whether the relationship behaves differently during periods of increasing and decreasing construction activity.
+Higher levels of construction spending are generally associated with higher levels of rebar PPI over the long term.
 
-### BQ7. What historical periods show significant changes in both construction spending and rebar prices, and what patterns are observed during those periods?
+However, correlation does not establish causation. The relationship may also reflect broader long-term changes in the construction market and overall price levels.
 
-This identifies notable periods that may provide additional context for the relationship between the two markets.
+---
 
-### BQ8. What does the historical relationship between construction spending and rebar prices indicate about the usefulness of construction activity as a potential market indicator for the rebar industry?
+## BQ4 — How strong is the relationship between changes in construction spending and changes in rebar prices?
 
-This brings the findings from the previous questions together to address the overall business problem.
+The correlation between monthly percentage changes was:
 
-## Key Findings
+**Correlation = 0.091**
 
-* Total U.S. construction spending increased approximately **530.60%** from January 1993 to July 2026.
-* The Rebar PPI increased approximately **220.58%** over the same period.
-* Construction spending and rebar PPI showed a strong positive correlation in their overall levels of approximately **0.902**.
-* Monthly changes in construction spending and rebar prices showed a much weaker relationship, with a correlation of approximately **0.091**.
-* Lead/lag correlations were also weak, with construction spending leading rebar prices by one month at approximately **0.059** and rebar prices leading construction spending by one month at approximately **0.087**.
-* The relationship remained weak when construction spending increased (**0.068**) or decreased (**0.044**).
-* Five historical periods showed significant changes in both construction spending and rebar prices based on the 90th-percentile absolute-change threshold.
-* Four of the five significant periods had increases in both measures, while November 2008 showed significant decreases in both.
+### Finding
+
+The relationship between monthly changes in construction spending and monthly changes in rebar prices is **very weak**.
+
+Although the overall levels of construction spending and rebar prices have a strong positive relationship, their month-to-month changes do not move closely together.
+
+The corresponding R² is approximately **0.008**, meaning that only a very small portion of the variation in monthly rebar price changes is explained by the linear relationship with monthly construction spending changes.
+
+This indicates that short-term changes in construction spending alone are not a strong indicator of monthly rebar price movements.
+
+---
+
+## BQ5 — Do changes in construction spending tend to occur before, after, or at the same time as changes in rebar prices?
+
+The analysis compared three timing scenarios:
+
+| Timing                                 | Correlation |
+| -------------------------------------- | ----------: |
+| Same month                             |       0.091 |
+| Construction spending leads by 1 month |       0.059 |
+| Rebar prices lead by 1 month           |       0.087 |
+
+### Finding
+
+All three relationships are **very weak**.
+
+The strongest of the three is the one-month relationship where rebar prices lead construction spending, at approximately **0.087**. However, this is still too weak to indicate a meaningful or consistent lead-lag relationship.
+
+The analysis therefore does not provide strong evidence that either construction spending or rebar prices consistently lead the other by one month.
+
+---
+
+## BQ6 — Does the relationship change when construction spending increases versus decreases?
+
+The monthly-change correlation was separated into periods of increasing and decreasing construction spending.
+
+| Construction Direction | Correlation |
+| ---------------------- | ----------: |
+| Increasing             |       0.068 |
+| Decreasing             |       0.044 |
+
+### Finding
+
+The relationship is slightly stronger when construction spending is increasing than when it is decreasing.
+
+However, both correlations remain **very weak**.
+
+This indicates that the direction of construction spending does not substantially change the relationship with monthly rebar price movements.
+
+Whether construction spending is increasing or decreasing, monthly construction spending changes alone do not appear to be a strong indicator of monthly rebar price changes.
+
+---
+
+## BQ7 — What historical periods show significant changes in both construction spending and rebar prices?
+
+Significant periods were identified using the **90th percentile of the absolute monthly changes** as the threshold.
+
+### Thresholds
+
+* **Construction spending:** 10.62%
+* **Rebar PPI:** 1.82%
+
+Five periods met both thresholds:
+
+| Period        | Construction Spending | Rebar PPI | Construction Change | Rebar Change |
+| ------------- | --------------------: | --------: | ------------------: | -----------: |
+| March 2004    |                73,238 |   142.400 |             +14.19% |       +2.01% |
+| November 2008 |                86,093 |   198.500 |             -10.89% |       -1.83% |
+| March 2021    |               127,095 |   240.900 |             +13.75% |       +6.88% |
+| March 2022    |               148,686 |   353.839 |             +13.90% |       +3.67% |
+| March 2023    |               157,866 |   364.557 |             +11.74% |       +2.34% |
+
+### Finding
+
+Four of the five significant periods had increases in both construction spending and rebar prices:
+
+* March 2004
+* March 2021
+* March 2022
+* March 2023
+
+November 2008 was the only identified period where both variables experienced significant decreases.
+
+These periods demonstrate that large movements in construction spending and rebar prices can occur in the same direction during certain market conditions.
+
+However, the limited number of significant periods and the weak monthly correlations indicate that this pattern is not consistent enough to establish a strong short-term relationship.
+
+---
+
+## BQ8 — What does the historical relationship indicate about the usefulness of construction activity as a market indicator for the rebar industry?
+
+The analysis produces two very different results depending on the type of relationship being measured.
+
+### Long-term relationship
+
+* Construction spending and rebar PPI correlation: **0.902**
+
+### Short-term relationship
+
+* Monthly change correlation: **0.091**
+* Construction leads rebar by one month: **0.059**
+* Rebar leads construction by one month: **0.087**
+* Increasing construction spending: **0.068**
+* Decreasing construction spending: **0.044**
+
+### Finding
+
+Construction activity appears to be useful as a **broad indicator of long-term rebar market conditions**, but it is not a strong **short-term predictor** of rebar price movements.
+
+The strong correlation between the overall levels suggests that both variables have followed similar long-term upward trends.
+
+However, the much weaker correlation between monthly changes indicates that short-term changes in construction spending alone do not explain rebar price movements well.
+
+The lead-lag analysis also provides little evidence of a consistent one-month timing relationship.
+
+---
+
+# Overall Findings
+
+The analysis shows a clear distinction between **long-term market trends** and **short-term market movements**.
+
+Construction spending and rebar prices have moved together strongly when comparing their overall levels across the full analysis period. However, when the analysis focuses on month-to-month changes, the relationship becomes very weak.
+
+This suggests that construction spending can provide useful context when evaluating the broader rebar market, but it should not be used by itself to predict short-term rebar price movements.
+
+Other factors should be considered when evaluating rebar pricing, including:
+
+* Raw material costs
+* Energy prices
+* Supply conditions
+* Imports and exports
+* Tariffs
+* Interest rates
+* Broader economic conditions
+* Other construction market factors
 
 ## Overall Conclusion
 
-Construction spending provides useful context for understanding overall construction market conditions, but the analysis does not support using monthly changes in total construction spending alone as a strong indicator of monthly rebar price movements.
+Construction spending is a useful **market context indicator**, but it is not a reliable standalone predictor of short-term rebar price movements.
 
-The results show that construction activity and rebar prices can move in the same direction during certain significant periods, but the monthly relationship between the two variables is consistently weak. This indicates that additional market factors should be considered when evaluating rebar pricing conditions.
+The results support using construction activity as one component of broader market intelligence rather than as a single forecasting variable.
 
-## Tools Used
-
-* **Python** — Primary language used for data analysis and calculations
-* **Jupyter Notebook** — Analysis environment and documentation
-* **Pandas** — Data cleaning, transformation, and analysis
-* **NumPy** — Numerical calculations and statistical analysis
-* **Matplotlib** — Data visualization
-* **MySQL / MySQL Workbench** — Data storage, organization, validation, and exploratory SQL queries
-* **Microsoft Excel / Google Sheets** — Initial data preparation and cleaning
-* **GitHub** — Version control and portfolio presentation
-
-
-## Project Structure
-
-```text
-rebar-market-intelligence/
-│
-├── README.md
-│
-├── data/
-│   └── README.md
-│
-├── sql/
-│   └── analysis_queries.sql
-│
-├── notebooks/
-│   └── rebar_market_intelligence_analysis.ipynb
-│
-├── visualizations/
-│
-└── docs/
-    └── methodology.md
-     └── findings.md
-
-
+Because this analysis is observational and historical, the results describe relationships within the dataset but do not establish causation.
