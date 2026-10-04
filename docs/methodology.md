@@ -113,3 +113,49 @@ SQL analysis included:
 - The top 10 years by average construction spending.
 
 Additional statistical analysis and calculations were performed using Google Sheets and Python/Jupyter Notebook.
+
+## Results & Key Findings
+
+### Overall Relationship
+
+The analysis found a weak relationship between monthly changes in total construction spending and monthly changes in rebar prices.
+
+The correlation between same-month changes was approximately **0.091**, indicating a very weak positive relationship.
+
+### Lead/Lag Analysis
+
+The analysis tested whether changes in one market measure tended to occur before changes in the other.
+
+- **Construction spending leading rebar prices:** 0.059
+- **Rebar prices leading construction spending:** 0.087
+
+Both relationships were very weak, indicating that neither measure consistently led the other during the period analyzed.
+
+### Increasing vs. Decreasing Construction Spending
+
+The relationship was also examined separately during periods when construction spending increased and decreased.
+
+- **Increasing construction spending:** 0.068
+- **Decreasing construction spending:** 0.044
+
+Both correlations were below 0.10, indicating a weak relationship in both conditions.
+
+### Significant Historical Periods
+
+Five periods were identified using the 90th-percentile threshold for significant monthly changes:
+
+| Period | Construction Spending | Rebar PPI | Construction Change | Rebar Change |
+|---|---:|---:|---:|---:|
+| Mar. 2004 | 73,238 | 142.400 | +2.01% | +14.19% |
+| Nov. 2008 | 86,093 | 198.500 | -1.83% | -10.89% |
+| Mar. 2021 | 127,095 | 240.900 | +6.88% | +13.75% |
+| Mar. 2022 | 148,686 | 353.839 | +3.67% | +13.90% |
+| Mar. 2023 | 157,866 | 364.557 | +2.34% | +11.74% |
+
+Four of the five significant periods showed construction spending and rebar prices moving in the same direction. November 2008 was the exception, with both measures experiencing significant declines.
+
+### Overall Finding
+
+Construction spending provides useful context for understanding overall construction market conditions, but the analysis does not support using monthly changes in total construction spending alone as a strong indicator of monthly rebar price movements.
+
+The results suggest that construction activity and rebar prices can move in the same direction during certain significant periods, but their month-to-month relationship is consistently weak. Additional market factors should therefore be considered when evaluating rebar price movements.
