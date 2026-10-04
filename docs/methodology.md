@@ -46,6 +46,12 @@ The final analysis table contains the following fields:
 
 The final matched dataset covers January 1993 through July 2026.
 
+## Data Limitations
+
+The analysis is observational and historical. A relationship between construction spending and rebar prices does not necessarily mean that changes in one variable directly cause changes in the other.
+
+Other factors that can affect rebar prices—including raw material costs, energy prices, supply conditions, imports, tariffs, interest rates, and broader economic conditions—are not directly included in this two-dataset analysis.
+
 ## Analysis Methods
 
 The analysis was designed to evaluate whether changes in U.S. construction spending were associated with changes in rebar prices over the historical period.
